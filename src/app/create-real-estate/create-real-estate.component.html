@@ -1,0 +1,49 @@
+<h2>Add Real Estate Listing</h2>
+<div class="container">
+  <form (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="realEstate.title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea
+        class="form-control"
+        id="description"
+        [(ngModel)]="realEstate.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        [(ngModel)]="realEstate.price"
+        name="price"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="imagePath" class="form-label">Image Path:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imagePath"
+        [(ngModel)]="realEstate.imagePath"
+        name="imagePath"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
