@@ -7,10 +7,9 @@ import { RealEstate } from './model/real-estate';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Real Estate Dashboard';
+  realEstates: RealEstate[] = [];
 
-  createRealEstate(realEstate: RealEstate) {
-    // Handle new real estate creation
-    console.log(realEstate);
+  onRealEstateAdded(newRealEstate: RealEstate) {
+    this.realEstates.push(newRealEstate);
   }
 }

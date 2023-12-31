@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { RealEstate } from '../model/real-estate';
-import { RealEstateService } from '../real-estate.service';
 
 @Component({
   selector: 'app-real-estate-card',
@@ -9,13 +7,11 @@ import { RealEstateService } from '../real-estate.service';
   styleUrls: ['./real-estate-card.component.css'],
 })
 export class RealEstateCardComponent implements OnInit {
-  realEstates$: Observable<RealEstate[]>;
+  @Input() realEstates: RealEstate[] = []; // Accept input from parent component
 
-  constructor(private realEstateService: RealEstateService) {
-    this.realEstates$ = this.realEstateService.getRealEstates();
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    this.realEstates$ = this.realEstateService.getRealEstates();
+    // Additional initialization if needed
   }
 }

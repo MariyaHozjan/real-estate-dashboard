@@ -1,9 +1,9 @@
 <div style="text-align: center">
   <h1>Real Estate Dashboard</h1>
   <div class="row">
-    <app-real-estate-card></app-real-estate-card>
     <app-create-real-estate
-      (realEstateEmitter)="createRealEstate($event)"
+      (realEstateAdded)="onRealEstateAdded($event)"
     ></app-create-real-estate>
+    <app-real-estate-card [realEstates]="realEstates"></app-real-estate-card>
   </div>
 </div>

@@ -1,9 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 8080;
 
 app.use(express.json());
-
+app.use(cors());
 // Define routes here
 app.get("/real-estates", (req, res) => {
   res.json([
@@ -26,11 +27,12 @@ app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
 
-const cors = require("cors");
 app.use(cors());
 
+let realEstates = []; // Simple in-memory storage
+
 app.post("/real-estates", (req, res) => {
-  const realEstate = req.body; // Make sure you have body-parser middleware to parse JSON body
-  console.log(realEstate);
-  res.status(201).send("Real estate added");
+  const newRealEstate = req.body;
+  realEstates.push(newRealEstate); // Add to the list
+  res.status(201).json(newRealEstate); // Respond with the new item
 });
