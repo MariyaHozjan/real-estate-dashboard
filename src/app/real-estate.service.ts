@@ -18,4 +18,8 @@ export class RealEstateService {
   addRealEstate(realEstate: RealEstate): Observable<any> {
     return this.http.post(this.apiUrl, realEstate);
   }
+
+  deleteRealEstate(index: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${index}`);
+  }
 }

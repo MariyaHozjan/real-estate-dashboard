@@ -1,5 +1,9 @@
 <div class="container d-flex justify-content-center">
-  <div class="card" style="width: 18rem" *ngFor="let estate of realEstates">
+  <div
+    class="card"
+    style="width: 18rem"
+    *ngFor="let estate of realEstates; let i = index"
+  >
     <img
       [src]="estate.imagePath"
       class="card-img-top"
@@ -9,6 +13,8 @@
       <h5 class="card-title">{{ estate.title }}</h5>
       <p class="card-text">{{ estate.description }}</p>
       <p class="card-text">Price: ${{ estate.price }}</p>
+      <button class="btn btn-primary" (click)="onEdit(estate, i)">Edit</button>
+      <button class="btn btn-danger" (click)="onDelete(i)">Delete</button>
     </div>
   </div>
 </div>

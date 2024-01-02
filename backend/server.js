@@ -36,3 +36,14 @@ app.post("/real-estates", (req, res) => {
   realEstates.push(newRealEstate); // Add to the list
   res.status(201).json(newRealEstate); // Respond with the new item
 });
+
+app.delete("/real-estates/:index", (req, res) => {
+  const { index } = req.params;
+  if (index >= 0 && index < realEstates.length) {
+    realEstates.splice(index, 1);
+    res.status(200).json({ message: "Real estate deleted successfully" });
+  } else {
+    res.status(404).send("Real estate not found");
+  }
+  console.log("Delete request received for index:", req.params.index);
+});

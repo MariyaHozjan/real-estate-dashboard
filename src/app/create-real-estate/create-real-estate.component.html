@@ -1,4 +1,4 @@
-<h2>Add Real Estate Listing</h2>
+<h2>{{ isEditing ? "Edit" : "Add" }} Real Estate Listing</h2>
 <div class="container">
   <form (ngSubmit)="submit()">
     <div class="mb-3">
@@ -44,6 +44,8 @@
         required
       />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">
+      {{ isEditing ? "Update" : "Submit" }} Listing
+    </button>
   </form>
 </div>
