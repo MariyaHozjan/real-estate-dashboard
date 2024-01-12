@@ -15,11 +15,18 @@ export class RealEstateService {
     return this.http.get<RealEstate[]>(this.apiUrl);
   }
 
-  addRealEstate(realEstate: RealEstate): Observable<any> {
-    return this.http.post(this.apiUrl, realEstate);
+  addRealEstate(realEstate: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, realEstate);
   }
 
-  deleteRealEstate(index: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${index}`);
+  deleteRealEstate(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+  updateRealEstate(
+    id: number,
+    updatedEstate: RealEstate
+  ): Observable<RealEstate> {
+    return this.http.put<RealEstate>(`${this.apiUrl}/${id}`, updatedEstate);
   }
 }

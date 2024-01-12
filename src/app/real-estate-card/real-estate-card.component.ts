@@ -9,10 +9,7 @@ import { RealEstate } from '../model/real-estate';
 export class RealEstateCardComponent implements OnInit {
   @Input() realEstates: RealEstate[] = []; // Accept input from parent component
   @Output() deleteRequest = new EventEmitter<number>();
-  @Output() editRequest = new EventEmitter<{
-    estate: RealEstate;
-    index: number;
-  }>();
+  @Output() editRequest = new EventEmitter<number>();
 
   constructor() {}
 
@@ -20,11 +17,11 @@ export class RealEstateCardComponent implements OnInit {
     // Additional initialization if needed
   }
 
-  onDelete(index: number): void {
-    this.deleteRequest.emit(index);
+  onDelete(id: number): void {
+    this.deleteRequest.emit(id);
   }
 
-  onEdit(estate: RealEstate, index: number): void {
-    this.editRequest.emit({ estate, index });
+  onEdit(id: number): void {
+    this.editRequest.emit(id);
   }
 }

@@ -15,13 +15,23 @@ export class AppComponent {
   constructor(private realEstateService: RealEstateService) {}
 
   onRealEstateAdded(newRealEstate: RealEstate) {
-    this.realEstates.push(newRealEstate);
+    this.realEstateService.addRealEstate(newRealEstate).subscribe({
+      next: (addedEstate) => {
+        this.realEstates.push(addedEstate);
+      },
+      error: (error) => {
+        console.error('Error adding real estate:', error);
+      },
+    });
   }
 
-  onDeleteRealEstate(index: number): void {
-    this.realEstateService.deleteRealEstate(index).subscribe({
+  onDeleteRealEstate(id: number): void {
+    console.log('Attempting to delete real estate with id:', id);
+    this.realEstateService.deleteRealEstate(id).subscribe({
       next: () => {
-        this.realEstates.splice(index, 1);
+        this.realEstates = this.realEstates.filter(
+          (estate) => estate.id !== id
+        );
       },
       error: (error) => {
         console.error('Error deleting real estate:', error);
@@ -29,16 +39,28 @@ export class AppComponent {
     });
   }
 
-  onEditRealEstate(event: { estate: RealEstate; index: number }): void {
-    this.selectedRealEstate = { ...event.estate };
-    this.editingIndex = event.index;
+  onEditRealEstate(id: number): void {
+    const estate = this.realEstates.find((estate) => estate.id === id);
+    if (estate) {
+      this.selectedRealEstate = { ...estate };
+    }
   }
 
   onRealEstateUpdated(updatedEstate: RealEstate): void {
-    if (this.editingIndex !== null) {
-      this.realEstates[this.editingIndex] = updatedEstate;
-      this.selectedRealEstate = null;
-      this.editingIndex = null;
-    }
+    this.realEstateService
+      .updateRealEstate(updatedEstate.id, updatedEstate)
+      .subscribe({
+        next: (updatedRealEstate) => {
+          const index = this.realEstates.findIndex(
+            (estate) => estate.id === updatedEstate.id
+          );
+          if (index !== -1) {
+            this.realEstates[index] = updatedRealEstate;
+          }
+        },
+        error: (error) => {
+          console.error('Error updating real estate:', error);
+        },
+      });
   }
 }

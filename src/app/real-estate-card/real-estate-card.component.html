@@ -13,8 +13,10 @@
       <h5 class="card-title">{{ estate.title }}</h5>
       <p class="card-text">{{ estate.description }}</p>
       <p class="card-text">Price: ${{ estate.price }}</p>
-      <button class="btn btn-primary" (click)="onEdit(estate, i)">Edit</button>
-      <button class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+      <button class="btn btn-primary" (click)="onEdit(estate.id)">Edit</button>
+      <button class="btn btn-danger" (click)="onDelete(estate.id)">
+        Delete
+      </button>
     </div>
   </div>
 </div>
