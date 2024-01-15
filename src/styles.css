@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.col-md-3.col-lg-2.p-0 {
+  height: 100vh;
+  overflow-y: auto; /* Add this line to enable scrolling if the content exceeds the viewport height */
+}

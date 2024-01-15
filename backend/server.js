@@ -24,6 +24,8 @@ let realEstates = loadData();
 let nextId =
   realEstates.length > 0 ? Math.max(...realEstates.map((e) => e.id)) + 1 : 1;
 
+console.log("Initial nextId:", nextId);
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -37,6 +39,7 @@ app.get("/real-estates", (req, res) => {
 });
 
 app.post("/real-estates", (req, res) => {
+  console.log("Generated nextId for new listing:", nextId);
   const newRealEstate = { id: nextId++, ...req.body };
   realEstates.push(newRealEstate);
   saveData(realEstates);

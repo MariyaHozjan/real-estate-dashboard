@@ -1,15 +1,89 @@
-<div style="text-align: center">
-  <h1>Real Estate Dashboard</h1>
-  <div class="row layout">
-    <app-real-estate-card
-      [realEstates]="realEstates"
-      (deleteRequest)="onDeleteRealEstate($event)"
-      (editRequest)="onEditRealEstate($event)"
-    ></app-real-estate-card>
-    <app-create-real-estate
-      [editRealEstate]="selectedRealEstate"
-      (realEstateAdded)="onRealEstateAdded($event)"
-      (realEstateUpdated)="onRealEstateUpdated($event)"
-    ></app-create-real-estate>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Navigation Sidebar (left side) -->
+    <div class="col-md-3 col-lg-2 p-0">
+      <div class="d-flex flex-column h-100 text-white bg-dark">
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4">Real estate dashboard</span>
+        </a>
+        <hr />
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#home" />
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#speedometer2" />
+              </svg>
+              Listings
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#table" />
+              </svg>
+              Edit listings
+            </a>
+          </li>
+        </ul>
+        <hr />
+        <div class="dropdown">
+          <a
+            href="#"
+            class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <strong>mdo</strong>
+            <a class="dropdown-item" href="#">Sign out</a>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Router Content (right side) -->
+    <main class="col-md-9 col-lg-10">
+      <router-outlet></router-outlet>
+    </main>
   </div>
 </div>
+
+<!--
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-3 col-lg-2">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Listings </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Edit Listings </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+-->
