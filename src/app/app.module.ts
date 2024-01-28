@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RealEstateCardComponent } from './real-estate-card/real-estate-card.component';
 import { CreateRealEstateComponent } from './create-real-estate/create-real-estate.component';
 import { EditRealEstatesComponent } from './edit-real-estates/edit-real-estates.component';
+import { ListingsComponent } from './listings/listings.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { EditRealEstatesComponent } from './edit-real-estates/edit-real-estates.
     RealEstateCardComponent,
     CreateRealEstateComponent,
     EditRealEstatesComponent,
+    ListingsComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

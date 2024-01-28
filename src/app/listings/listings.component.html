@@ -1,0 +1,28 @@
+<!-- listings.component.html -->
+<div class="container mt-4">
+  <h2>Real Estate Listings</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Descriptions</th>
+        <th scope="col">Price</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estate of realEstates; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ estate.title }}</td>
+        <td>{{ estate.description }}</td>
+        <td>${{ estate.price }}</td>
+        <td>
+          <!-- Add buttons or links for edit/delete actions -->
+          <button class="btn btn-primary btn-sm">Edit</button>
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
