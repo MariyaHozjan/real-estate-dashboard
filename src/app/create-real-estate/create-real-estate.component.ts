@@ -19,13 +19,17 @@ export class CreateRealEstateComponent implements OnChanges {
   @Output() realEstateAdded = new EventEmitter<RealEstate>();
   @Output() realEstateUpdated = new EventEmitter<RealEstate>();
 
-  realEstate: RealEstate = new RealEstate(0, '', '', 0, '');
+  realEstate: RealEstate = new RealEstate(null, '', '', 0, '');
   isEditing = false;
 
   constructor(private realEstateService: RealEstateService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['editRealEstate'] && this.editRealEstate) {
+    if (
+      changes['editRealEstate'] &&
+      this.editRealEstate &&
+      this.editRealEstate.id !== null
+    ) {
       this.realEstate = new RealEstate(
         this.editRealEstate.id,
         this.editRealEstate.title,
@@ -34,6 +38,8 @@ export class CreateRealEstateComponent implements OnChanges {
         this.editRealEstate.imagePath
       );
       this.isEditing = true;
+    } else {
+      this.resetForm(); // Reset form when there are no changes
     }
   }
 
@@ -47,7 +53,7 @@ export class CreateRealEstateComponent implements OnChanges {
   }
 
   resetForm(): void {
-    this.realEstate = new RealEstate(0, '', '', 0, '');
+    this.realEstate = new RealEstate(null, '', '', 0, '');
     this.isEditing = false;
   }
 }

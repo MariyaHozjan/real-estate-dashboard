@@ -17,11 +17,15 @@ export class RealEstateCardComponent implements OnInit {
     // Additional initialization if needed
   }
 
-  onDelete(id: number): void {
-    this.deleteRequest.emit(id);
+  onDelete(id: number | null): void {
+    if (id !== null) {
+      this.deleteRequest.emit(id);
+    }
   }
 
-  onEdit(id: number): void {
-    this.editRequest.emit(id);
+  onEdit(id: number | null): void {
+    if (id !== null) {
+      this.editRequest.emit(id);
+    }
   }
 }

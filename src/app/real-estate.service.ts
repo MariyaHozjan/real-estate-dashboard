@@ -15,8 +15,9 @@ export class RealEstateService {
     return this.http.get<RealEstate[]>(this.apiUrl);
   }
 
-  addRealEstate(realEstate: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, realEstate);
+  addRealEstate(realEstate: RealEstate): Observable<RealEstate> {
+    const { id, ...realEstateData } = realEstate; // Exclude id for new entries
+    return this.http.post<RealEstate>(this.apiUrl, realEstateData);
   }
 
   deleteRealEstate(id: number): Observable<any> {

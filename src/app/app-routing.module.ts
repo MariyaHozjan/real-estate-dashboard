@@ -5,7 +5,7 @@ import { EditRealEstatesComponent } from './edit-real-estates/edit-real-estates.
 const routes: Routes = [
   { path: '', redirectTo: '/edit', pathMatch: 'full' }, // Default route
   { path: 'edit', component: EditRealEstatesComponent },
-  { path: '**', redirectTo: '' },
+  // { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
