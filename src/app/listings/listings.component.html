@@ -17,8 +17,10 @@
         <td>{{ estate.description }}</td>
         <td>${{ estate.price }}</td>
         <td>
-          <button class="btn btn-primary btn-sm">Edit</button>
-          <button class="btn btn-danger btn-sm">Delete</button>
+          <button class="btn btn-primary btn-sm" (click)="navigateToEdit()">
+            Edit listing
+          </button>
+          <!-- <button class="btn btn-danger btn-sm">Delete</button> -->
         </td>
       </tr>
     </tbody>

@@ -13,3 +13,7 @@
     flex: 3;
   }
 }
+
+.container-fluid {
+  background-color: #f5f9fc;
+}

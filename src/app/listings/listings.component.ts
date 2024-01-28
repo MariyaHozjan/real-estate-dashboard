@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RealEstateService } from '../real-estate.service';
 import { RealEstate } from '../model/real-estate';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listings',
@@ -11,7 +12,10 @@ import { RealEstate } from '../model/real-estate';
 export class ListingsComponent implements OnInit {
   realEstates: RealEstate[] = [];
 
-  constructor(private realEstateService: RealEstateService) {}
+  constructor(
+    private realEstateService: RealEstateService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.fetchRealEstates();
@@ -21,5 +25,9 @@ export class ListingsComponent implements OnInit {
     this.realEstateService.getRealEstates().subscribe((data) => {
       this.realEstates = data;
     });
+  }
+
+  navigateToEdit(): void {
+    this.router.navigate(['/edit']);
   }
 }

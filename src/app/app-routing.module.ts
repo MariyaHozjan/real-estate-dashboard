@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/edit', pathMatch: 'full' }, // Default route
   { path: 'edit', component: EditRealEstatesComponent },
   { path: 'listings', component: ListingsComponent },
+  { path: 'edit', component: EditRealEstatesComponent },
   // { path: '**', redirectTo: '' },
 ];
 
