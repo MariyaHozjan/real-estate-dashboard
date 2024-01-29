@@ -1,7 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 .col-md-3.col-lg-2.p-0 {
   height: 100vh;
-  overflow-y: auto; /* Add this line to enable scrolling if the content exceeds the viewport height */
+  overflow-y: auto;
+}
+
+.btn-primary {
+  background-color: #566ee6;
+  border-color: #566ee6;
+}
+
+.btn-primary:hover {
+  background-color: #4a5fc6;
+  border-color: #4a5fc6;
+}
+
+.btn-danger {
+  background-color: #f46a6a;
+  border-color: #f46a6a;
+}
+
+.btn-danger:hover {
+  background-color: #dd5858;
+  border-color: #dd5858;
 }

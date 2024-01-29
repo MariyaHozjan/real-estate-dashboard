@@ -15,5 +15,8 @@
 }
 
 .container-fluid {
-  background-color: #f5f9fc;
+  background-color: #f4f4f7;
+}
+.bg-dark {
+  background-color: #2a3042 !important;
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RealEstate } from './model/real-estate';
-import { RealEstateService } from './real-estate.service';
+import { AuthService } from './auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,10 @@ import { RealEstateService } from './real-estate.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private authService: AuthService, private router: Router) {}
+
+  signOut(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }
