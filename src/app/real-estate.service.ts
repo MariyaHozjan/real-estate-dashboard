@@ -7,7 +7,7 @@ import { RealEstate } from './model/real-estate';
   providedIn: 'root',
 })
 export class RealEstateService {
-  private apiUrl = 'http://localhost:8080/real-estates'; // Adjust the URL as needed
+  private apiUrl = 'http://localhost:8080/real-estates';
 
   constructor(private http: HttpClient) {}
 
@@ -16,7 +16,7 @@ export class RealEstateService {
   }
 
   addRealEstate(realEstate: RealEstate): Observable<RealEstate> {
-    const { id, ...realEstateData } = realEstate; // Exclude id for new entries
+    const { id, ...realEstateData } = realEstate;
     return this.http.post<RealEstate>(this.apiUrl, realEstateData);
   }
 

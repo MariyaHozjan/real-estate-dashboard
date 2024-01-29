@@ -2,22 +2,22 @@
   {
     "id": 6,
     "title": "list1",
-    "description": "eeel",
-    "price": 0,
+    "description": "This is another listing",
+    "price": 600000,
     "imagePath": ""
   },
   {
-    "id": 8,
-    "title": "kkkk",
-    "description": "lll",
-    "price": 0,
+    "id": 12,
+    "title": "list 2",
+    "description": "this is a listing",
+    "price": 500000,
     "imagePath": ""
   },
   {
-    "id": 9,
+    "id": 14,
     "title": "list 3",
-    "description": "ss",
-    "price": 0,
+    "description": "listing",
+    "price": 10000,
     "imagePath": ""
   }
 ]

@@ -15,7 +15,7 @@
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ estate.title }}</td>
         <td>{{ estate.description }}</td>
-        <td>${{ estate.price }}</td>
+        <td>€{{ estate.price }}</td>
         <td>
           <button class="btn btn-primary btn-sm" (click)="navigateToEdit()">
             Edit listing

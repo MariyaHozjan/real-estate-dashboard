@@ -1,4 +1,3 @@
-// listings.component.ts
 import { Component, OnInit } from '@angular/core';
 import { RealEstateService } from '../real-estate.service';
 import { RealEstate } from '../model/real-estate';

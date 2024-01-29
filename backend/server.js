@@ -1,7 +1,7 @@
 const fs = require("fs");
 const dataFilePath = "./realEstatesData.json";
+const jwt = require("jsonwebtoken");
 
-// Function to load data from file
 function loadData() {
   if (fs.existsSync(dataFilePath)) {
     const fileData = fs.readFileSync(dataFilePath, "utf8");
@@ -10,7 +10,6 @@ function loadData() {
   return [];
 }
 
-// Function to save data to file
 function saveData(data) {
   try {
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2), "utf8");
@@ -19,7 +18,6 @@ function saveData(data) {
   }
 }
 
-// Load existing real estates data from file
 let realEstates = loadData();
 let nextId =
   realEstates.length > 0 ? Math.max(...realEstates.map((e) => e.id)) + 1 : 1;
@@ -74,4 +72,15 @@ app.put("/real-estates/:id", (req, res) => {
   } else {
     res.status(404).send("Real estate not found");
   }
+});
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  if (username !== "admin" || password !== "admin") {
+    res.status(401).send("Invalid credentials");
+    return;
+  }
+
+  const token = jwt.sign({ username }, "your-secret-key");
+  res.json({ token });
 });
