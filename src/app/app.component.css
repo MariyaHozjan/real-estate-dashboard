@@ -20,3 +20,31 @@
 .bg-dark {
   background-color: #2a3042 !important;
 }
+
+.header-right {
+  margin-left: auto;
+}
+
+.dropdown-menu {
+  border-color: white;
+}
+
+header {
+  box-shadow: 0 0.75rem 1.5rem #12263f11;
+}
+
+.dropdown-item {
+  color: #f46a6a;
+}
+
+.active {
+  background-color: #566ee6 !important;
+}
+
+.nav-link {
+  padding-left: 3rem !important;
+}
+
+.fa-info-circle {
+  color: #566ee6 !important;
+}

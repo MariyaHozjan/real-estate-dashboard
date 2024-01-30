@@ -4,20 +4,41 @@
     "title": "list1",
     "description": "This is another listing",
     "price": 600000,
-    "imagePath": ""
+    "imagePath": "https://cdn.apartmenttherapy.info/image/upload/v1556716350/stock/8ea241e96504a398f291a31939963e8ba948368c.jpg"
   },
   {
     "id": 12,
     "title": "list 2",
     "description": "this is a listing",
     "price": 500000,
-    "imagePath": ""
+    "imagePath": "https://cdn.onekindesign.com/wp-content/uploads/2017/09/Rustic-Mountain-House-Ward-Young-Architects-02-1-Kindesign.jpg"
   },
   {
     "id": 15,
     "title": "list 3",
     "description": "this is a listing",
     "price": 10000,
-    "imagePath": ""
+    "imagePath": "https://image.cnbcfm.com/api/v1/image/103500764-GettyImages-147205632-2.jpg?v=1691157601"
+  },
+  {
+    "id": 16,
+    "title": "list 4",
+    "description": "qw",
+    "price": 0,
+    "imagePath": "https://www.mountainhouseplans.com/wp-content/uploads/2020/11/AdobeStock_214158908-scaled.jpeg"
+  },
+  {
+    "id": 17,
+    "title": "list 5",
+    "description": " listing",
+    "price": 0,
+    "imagePath": "https://stay.greatworld.com.sg/wp-content/uploads/2022/08/serviced-apartments-singapore.jpg-scaled.jpg"
+  },
+  {
+    "id": 18,
+    "title": "list 6",
+    "description": " listing",
+    "price": 0,
+    "imagePath": "https://galio.lt/wp-content/uploads/2021/04/Ctz_005.jpg"
   }
 ]

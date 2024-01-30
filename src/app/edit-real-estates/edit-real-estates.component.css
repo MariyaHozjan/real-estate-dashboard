@@ -1,0 +1,13 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+app-real-estate-card {
+  flex: 3; /* Takes 3 parts of the space */
+}
+
+app-create-real-estate {
+  flex: 1; /* Takes 1 part of the space */
+}
