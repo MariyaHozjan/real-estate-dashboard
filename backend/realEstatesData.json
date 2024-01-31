@@ -15,9 +15,9 @@
   },
   {
     "id": 15,
-    "title": "list 3",
+    "title": "list 4",
     "description": "this is a listing",
-    "price": 10000,
+    "price": 10004,
     "imagePath": "https://image.cnbcfm.com/api/v1/image/103500764-GettyImages-147205632-2.jpg?v=1691157601"
   },
   {
@@ -40,5 +40,12 @@
     "description": " listing",
     "price": 0,
     "imagePath": "https://galio.lt/wp-content/uploads/2021/04/Ctz_005.jpg"
+  },
+  {
+    "id": 19,
+    "title": "list 7",
+    "description": "",
+    "price": 0,
+    "imagePath": ""
   }
 ]

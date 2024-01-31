@@ -29,7 +29,6 @@ export class AuthService {
   }
 
   private handleError(error: any): Observable<never> {
-    // Handle the error appropriately in your app
     console.error('Login failed', error);
     throw error;
   }
