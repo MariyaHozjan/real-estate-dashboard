@@ -6,6 +6,6 @@
   background-color: white;
   border-radius: 0.25rem;
   padding: 0.5rem 2.5rem 2.5rem 2.5rem;
-  margin-top: 2rem;
   box-shadow: 0 0.75rem 1.5rem #12263f08;
+  margin-top: 2.5vh !important;
 }

@@ -27,14 +27,21 @@
 
 .dropdown-menu {
   border-color: white;
+  box-shadow: 0 1rem 3rem #0000002d;
 }
 
 header {
   box-shadow: 0 0.75rem 1.5rem #12263f11;
+  height: 69px;
 }
 
 .dropdown-item {
   color: #f46a6a;
+}
+
+.dropdown-item:hover {
+  padding-left: 19px;
+  background-color: rgba(233, 238, 240, 0.317);
 }
 
 .active {
@@ -47,4 +54,9 @@ header {
 
 .fa-info-circle {
   color: #566ee6 !important;
+}
+
+.row > * {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }

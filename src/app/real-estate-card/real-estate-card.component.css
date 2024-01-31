@@ -12,6 +12,10 @@
   padding: 2rem 0rem 2.5rem 0rem;
   margin-top: 2rem;
   box-shadow: 0 0.75rem 1.5rem #12263f08;
+  max-height: 85vh;
+  overflow-y: auto;
+  max-width: 55vw;
+  margin-top: 2.5vh !important;
 }
 
 p {
